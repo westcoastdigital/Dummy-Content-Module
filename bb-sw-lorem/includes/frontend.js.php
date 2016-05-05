@@ -2,7 +2,7 @@
 
 	$(function() {
 
-        
+        $( '.dummy_swipebox' ).swipebox();
 
 	});
 

@@ -15,6 +15,9 @@ class SWLoremClass extends FLBuilderModule {
             'url'               => SW_LOREM_MODULE_URL . '/',
         ));
         
+        $this->add_js( 'jquery.swipebox.min', $this->url . 'js/jquery.swipebox.min.js', array(), '', true ); 
+        $this->add_css( 'swipebox.min', $this->url . 'css/swipebox.min.css' );
+        
     }    
     
 }
@@ -102,6 +105,27 @@ FLBuilder::register_module( 'SWLoremClass', array(
                             'color'   => __( 'No', 'fl-builder' ),
                         ),
                     ), // end dummy_image_color
+                    
+                    'dummy_image_link' => array(
+                        'type'          => 'select',
+                        'label'         => __( 'Choose Image Link', 'fl-builder' ),
+                        'default'       => 'url',
+                        'options'       => array(
+                            'url'   => __( 'URL', 'fl-builder' ),
+                            'lightbox'   => __( 'Lightbox', 'fl-builder' ),
+                            'none'   => __( 'None', 'fl-builder' ),
+                        ),
+                        'toggle'        => array(
+                            'url'      => array (
+                                'fields'    => array( 'dummy_image_url' ),
+                            ),
+                        ),
+                    ), // end dummy_image_link
+                    
+                    'dummy_image_url' => array(
+                        'type'          => 'link',
+                        'label'         => __( 'Choose Image Link', 'fl-builder' ),
+                    ), // end dummy_image_url
                     
 					'text_color'    => array(
 						'type'          => 'color',
